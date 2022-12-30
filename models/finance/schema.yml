@@ -1,0 +1,116 @@
+version: 2
+
+models:
+  - name: dim_info
+    description: "dim info model gives over all view of the data"
+    columns:
+      - name: Actual
+        description: "Primary key of this table"
+        tests:
+          - not_null
+      - name: COGS
+        description: "Cost of goods"
+        tests:
+          - not_null
+      - name: Inventory
+        description: "Total units which are all available in inventory"
+        tests:
+          - not_null
+      - name: Segment
+        description: "Indicates the segment of the product"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Government', 'Channel Partners', 'Midmarket', 'Enterprise', 'Small Business']
+  - name: dim_exp
+    description: "dim exp model gives full information of the entire expense, gross sales"
+    columns:
+      - name: Actual
+        description: "Primary key of this table"
+        tests:
+          - not_null
+      - name: Expenses
+        description: "Gives the details of the expenses"
+        tests:
+          - not_null
+      - name: Gross_sales
+        description: "Gives the details of the sales"
+        tests:
+          - not_null
+      - name: Manufacturing_price
+        description: "Gives the information of manufacturing price"
+        tests:
+          - not_null
+  - name: dim_unit
+    description: "dim unit model gives infomation about the no. of target, unit price and units sold"
+    columns:
+      - name: Actual
+        description: "Primary key of this table"
+        tests:
+          - not_null
+      - name: Target
+        description: "Gives the count of total target"
+        tests:
+          - not_null
+      - name: Unit_Price
+        description: "Gives the count of total unit price"
+        tests:
+          - not_null
+      - name: Units_Sold
+        description: "Gives the count of total unit sold"
+        tests:
+          - not_null
+  - name: dim_month
+    description: "dim month model gives the infomation about the date, month"
+    columns:
+      - name: Actual
+        description: "Primary key of this table"
+        tests:
+          - not_null
+      - name: Month_Number
+        description: "Gives the month number"
+        tests:
+          - not_null
+      - name: Year
+        description: "Gives the year"
+        tests:
+          - not_null
+      - name: MonthName
+        description: "Gives the month name of the particular month"
+        tests:
+          - not_null
+      - name: Date
+        description: "Gives the date"
+        tests:
+          - not_null
+  - name: dim_profit
+    description: "dim profit gives the profit details"
+    columns:
+      - name: Actual
+        description: "Primary key of this table"
+        tests:
+          - not_null
+      - name: Discounts
+        description: "Gives the discount level"
+        tests:
+          - not_null
+      - name: Profit
+        description: "Gives the profit amount"
+        tests:
+          - not_null
+      - name: Sales
+        description: "Gives the total sales"
+        tests:
+          - not_null
+      - name: Country
+        description: "Gives the country name"
+        tests:
+          - not_null
+      - name: Discount_Band
+        description: "Gives the name of the discount brand"
+        tests:
+          - not_null
+      - name: Product
+        description: "Gives the name of the product"
+        tests:
+          - not_null
